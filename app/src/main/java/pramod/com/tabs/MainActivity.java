@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         vp = findViewById(R.id.viewpager);
+        vpAdapter adapter = new vpAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
+        vp.setAdapter(adapter);
     }
 
     class vpAdapter extends FragmentStatePagerAdapter {
